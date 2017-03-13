@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 对象</title>
+</head>
+<body>
+	<script>
+		// 三种对象创建方法
+		var o1 = {};
+		var o2 = new Object();
+		var o3 = Object.create(Object.prototype);	//写法一般用在需要对象继承的场合
+		// 查看所有就属性
+		var o = {
+			k1 : 1,
+			k2 : 2
+		};
+		console.log(Object.keys(o));
+
+	</script>
+</body>
+</html>

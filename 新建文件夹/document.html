@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>document节点</title>
+	<style>
+		.toast{
+			position: fixed;
+			height: 60px;
+			width: 700px;
+			top: 500px;
+			left: 500px;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div class="toast">
+		
+	</div>
+	<script>
+		console.log(document.doctype);
+		document.head == document.querySelector('head');
+		document.body == document.querySelector('body');
+		console.log(document.activeElement);
+		// document.lastModified属性返回当前文档最后修改的时间戳，格式为字符串。
+
+		// 跳转到另一个网址
+		// document.location.assign('http://www.baidu.com');
+		// 优先从服务器重新加载
+		// document.location.reload(true);
+		// 优先从本地缓存重新加载（默认值）
+		// document.location.reload(false);
+		// 跳转到新网址，并将取代掉history对象中的当前记录
+		// document.location.replace('http://www.baidu.com');
+		// 将location对象转为字符串，等价于document.location.href
+		document.location.toString();
+
+		// 页面显示“helloworld”
+		document.open();
+		document.write('hello');
+		document.write('world');
+		document.close();
+
+		// Element.clientHeight属性返回元素节点可见部分的高度，Element.clientWidth属性返回元素节点可见部分的宽度。所谓“可见部分”，指的是不包括溢出（overflow）的大小，只返回该元素在容器中占据的大小，对于有滚动条的元素来说，它们等于滚动条围起来的区域大小。这两个属性的值包括Padding、但不包括滚动条、边框和Margin，单位为像素。这两个属性可以计算得到，等于元素的CSS高度（或宽度）加上CSS的Padding，减去滚动条（如果存在）。
+
+		// 网页总高度
+		var $toast = document.getElementsByClassName('toast');
+		console.log('clientHeight :'+ $toast[0].clientHeight)
+		console.log('clientWidth :'+ $toast[0].clientWidth)
+
+		console.log('offsetHeight:'+ $toast[0].offsetHeight)
+		console.log('offsetWidth:'+ $toast[0].offsetWidth)
+		console.log('scrollHeight:'+ $toast[0].scrollHeight)
+		console.log('offsetHeight:'+ $toast[0].scrollWidth)
+		
+		console.log('document.body.offsetWidth:'+ document.body.offsetWidth)
+	</script>
+</body>
+</html>

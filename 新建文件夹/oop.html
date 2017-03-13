@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>oop编程</title>
+</head>
+<body>
+	<script>
+		/*function f() {
+		  return '姓名：'+ this.name;
+		}
+
+		var A = {
+		  name: '张三',
+		  describe: f
+		};
+
+		var B = {
+		  name: '李四',
+		  describe: f
+		};
+		console.log(A.describe())
+		console.log(B.describe())
+		console.log(Object.prototype.describe.call(A))*/
+
+		var A = {
+		  	name: '张三',
+		  	describe: function () {
+		    	return '姓名：'+ this.name;
+		  	}
+		};
+
+		Object.prototype.printName = function(){
+			alert(this.name);
+		}
+
+		var name = '李四';
+		// var f = A.printName("e3");
+		// var ff = Object.prototype.printName.call(this,"jj");
+		// f() // "姓名：李四"
+
+		var Obj = function(p){
+			this.p = p;
+		};
+		Obj.prototype.name = "name";
+		Obj.prototype.m = function(){
+			return this.p;
+		};
+
+		var o = new Obj("nihao!");
+
+		console.log(o.p);
+		console.log(o.m())
+
+		console.log(undefined instanceof Object);
+		//获取对象的属性
+		console.log(Object.getOwnPropertyNames(Obj))
+		console.log(Object.keys(Date))
+
+		// 利用instanceof巧妙解决，调用构造函数时，忘记加new命令的问题
+		function newObj(name,age){
+			if(this instanceof newObj){
+				this.name = name;
+				this.age = age;
+			}else{
+				return new newObj(name,age);
+			}
+		}
+
+		Date.hasOwnProperty('length')
+		// true
+		
+		Date.hasOwnProperty('toString')
+		// false
+		// hasOwnProperty方法是JavaScript之中唯一一个处理对象属性时，不会遍历原型链的方法。
+	</script>
+</body>
+</html>

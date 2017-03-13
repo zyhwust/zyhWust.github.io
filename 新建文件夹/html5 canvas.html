@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 canvas</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="500px" height="500px"></canvas>
+	<script type="text/javascript">
+		// var c = document.getElementById('myCanvas');
+		// var ctx = c.getContext("2d");
+		// ctx.fillStyle = "#ff0000";
+		// ctx.fillRect(0,0,150,753);
+
+		var c=document.getElementById("myCanvas");
+		var cxt=c.getContext("2d");
+		cxt.moveTo(0,10);
+		cxt.lineTo(150,50);
+		cxt.lineTo(10,50);
+		cxt.stroke();
+	</script>
+</body>
+</html>
